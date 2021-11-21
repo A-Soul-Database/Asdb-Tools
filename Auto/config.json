@@ -1,0 +1,28 @@
+{
+    "bot":{
+        "blibot":{
+            "liveroom_monitor":{
+                "uid":["672346917","672353429","351609538","672328094","672342685","703007996"],
+                "interval":60
+            },
+
+            "dynamtic":{
+                "uid":["672346917","672353429","351609538","672328094","672342685","703007996"],
+                "interval":60
+            },
+
+            "Record_monitor":{
+                "uid":"393396916",
+                "interval":60
+            },
+
+            "Video_comment":{
+                "uid":[],
+                "interval":60
+            }
+
+        }
+    },
+    "subtitle_server":"",
+    "main_interval":60
+}

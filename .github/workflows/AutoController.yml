@@ -1,0 +1,93 @@
+name: AutoController@v2.0
+# Asdb自动化控制器
+
+on:
+  push:
+    branches: [ auto ]
+# 触发器仅为主分支的push操作
+
+jobs:
+
+  CompareDiffer:
+  # 第一步对比差异
+    runs-on: ubuntu-latest
+    outputs: 
+      output1: ${{ steps.Changer.outputs.WebUpdate }}
+      output2: ${{ steps.Changer.outputs.ChangesJson }}
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: 'Install requirements'
+        run: |
+         pip install -r tools/GithubActions/sendWebhook/requirements.txt
+         
+      - name: File Changes Action
+        uses: trilom/file-changes-action@v1.2.4
+        
+      - id: Changer
+        run: python3 tools/GithubActions/sendWebhook/differ.py
+      # ${{ steps.Changer.outputs.WebUpdate }} 为build源码是否更新,则自动编译新版本
+      # ${{ steps.Changer.outputs.ChangesJson }} 具体差异 json字符串格式
+
+
+  CommitChanges:
+  #commit 差异
+    runs-on: ubuntu-latest
+    needs: CompareDiffer
+    steps: 
+    - name: CommitChanges💃
+      env:
+        BUILD: ${{needs.CompareDiffer.outputs.output1}}
+      if: ${{env.BUILD == 1}}
+      run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -m "CommitDiffer" -a
+    - name: PushToRepo🐱‍🏍
+      env:
+        BUILD: ${{needs.CompareDiffer.outputs.output1}}
+      if: ${{env.BUILD == 1}}
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: auto
+
+  Sync_To_Gitee:
+    # 同步至Gitee源
+    if: always()
+    needs: CommitChanges
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync To Gitee🐱‍👤
+      uses: abersheeran/sync-gitee-mirror@v1-beta
+      with:
+           repository: peterpei1186861238/A-Soul-Database
+           username: ${{ secrets.GITEEUSERNAME }}
+           password: ${{ secrets.GITEEPASSWORD }}
+
+  WebHooks:
+    # 向订阅服务器发送webhook
+    if: always()
+    needs: [Sync_To_Gitee,CompareDiffer]
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Check Out FIle'
+      uses: actions/checkout@v2
+    - name: 'Set up Python'
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7'
+    - name: 'Install necessary dependencies'
+      run: |
+        pip install -r tools/GithubActions/sendWebhook/requirements.txt
+    - name: Run sendWebhooks.py 
+      env:
+        DIFFERJSON: ${{needs.CompareDiffer.outputs.output2}}
+      run: |
+         python3 tools/GithubActions/sendWebhook/sendHooks.py "$DIFFERJSON"
