@@ -1,20 +1,19 @@
 """
-    _    ____  ____  ____  
-   / \  / ___||  _ \| __ ) 
-  / _ \ \___ \| | | |  _ \ 
- / ___ \ ___) | |_| | |_) |
-/_/   \_\____/|____/|____/    workflow V1.0-alpha 
+        _    ____  ____  ____  
+       / \  / ___||  _ \| __ ) 
+      / _ \ \___ \| | | |  _ \ 
+     / ___ \ ___) | |_| | |_) |
+    /_/   \_\____/|____/|____/    workflow V1.0-alpha 
 
+    Liveroom_Monitor (As Status)
 
-Liveroom_Monitor (As Status)
+    Record_Monitor 获取直播回放 -> video_comment 获取时间轴评论 -> (手动添加某些数据)
+    -> 推送请求到字幕服务器 -> Process -> Push
+    Dynamtic_Monitor  -> Add Data -> Push
 
-Record_Monitor 获取直播回放 -> video_comment 获取时间轴评论 -> (手动添加某些数据)
--> 推送请求到字幕服务器 -> Process -> Push
-Dynamtic_Monitor  -> Add Data -> Push
+    (Crontab) Comment_Grab 隔一段时间进行评论时间轴获取
 
-(Crontab) Comment_Grab 隔一段时间进行评论时间轴获取
-
-作为常驻进程,一定间隔内检查直播间数据,动态数据和直播时间轴
+    作为常驻进程,一定间隔内检查直播间数据,动态数据和直播时间轴
 
 """
 import logging
@@ -25,17 +24,27 @@ from threading import Thread
 from Bot.blibot import *
 import Bot.blibot.global_var as gl
 import time
+import requests
 
 Status = {
     "OnLiveList":[],
     "WaitForRecord":[],
-    "SubtitleList":[],
-    "Comment":[]
+    "SubtitleList":{},
+    "PushTrigger":[],
+    "NecessaryComment":[]
 }
+
 """
 Status = {
 	"onlive": ["uid1"],
-    "WaitForRecord":[]
+    "WaitForRecord":["uid1"],
+    "SubtitleList":
+        {
+            "bv123":["1","2"] (Pages)
+        },
+    "PushTrigger":["bv"],
+    "NecessaryComment":["bv1","bv2"]
+    #全部轴,用于区分日常维护轴
 }
 
 {uid}_LiveDetail -> result in liveroom_monitor
@@ -80,4 +89,30 @@ class Main:
                 except:
                     logging.error('Record_Monitor start failed')
                     exit()
+            
+            if len(Status["SubtitleList"]):
+                try:
+                    for i in Status["SubtitleList"].keys():
+                        url = f"{self.config['subtitle_server']}/addItem"
+                        paras = {
+                            "token":self.config['subtitle_server_token'],
+                            "bv":i,
+                            "p":','.join(Status["SubtitleList"][i]),
+                            "type":"json"
+                            #p的调用为 1,2 现在是["1","2"]
+                        }
+                        if len(self.config['subtitle_server_token']) == 0:
+                            del paras['token']
+                        SubThread = Thread(target=SubMonitor.SubMonitor,kwargs={"url":url,"paras":paras})
+                        SubThread.start()
+
+                except Exception as e:
+                    logging.error(e)
+                    logging.error('subtitle_server addItem failed')
+                    exit()
+
+            if len(Status["PushTrigger"]):
+                pass
+
+
 Main()

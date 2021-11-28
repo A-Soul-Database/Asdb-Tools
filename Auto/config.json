@@ -3,7 +3,7 @@
         "blibot":{
             "liveroom_monitor":{
                 "uid":["672346917","672353429","351609538","672328094","672342685","703007996"],
-                "interval":60
+                "interval":20
             },
 
             "dynamtic":{
@@ -23,6 +23,7 @@
 
         }
     },
-    "subtitle_server":"",
-    "main_interval":60
+    "subtitle_server":"sub.abc.com",
+    "main_interval":60,
+    "subtitle_server_token":""
 }

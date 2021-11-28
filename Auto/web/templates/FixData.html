@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fix Data</title>
+    </head>
+    <body>
+
+        <!---List All Data-->
+            <script>
+                function listGithubData() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            document.getElementById("githubData").innerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open("GET", "listGithubData.php", true);
+                    xhttp.send();
+                }
+            </script>
+        <!---List All Data-->
+
+        <form action="FixData" method="post">
+            <input type="text" name="FixData" />
+            <input type="submit" value="Push" />
+        </form>
+        <p>{{ postedData }}</p>
+    </body>
+</html>
