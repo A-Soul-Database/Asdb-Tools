@@ -8,8 +8,11 @@ import json
 import re
 import requests
 import logging
+from xmlrpc.server import SimpleXMLRPCServer
 
-logging.basicConfig(filename='logger.log', level=logging.INFO)
+
+logging.basicConfig(filename='./logs/process.txt', level=logging.INFO)
+
 
 class Auto:
     def __init__(self,Target_Path:str="./") -> None:
@@ -46,7 +49,7 @@ class Auto:
         return result
 
 
-    def FindAllDirs(self,path:str="E:\projects/as\A-Soul-Data\db/2021",result:dict={"year":[],"months":[]})->dict:
+    def FindAllDirs(self,path:str="D:\projects/as\A-Soul-Data\db/2021",result:dict={"year":[],"months":[]})->dict:
         """
             遍历文件夹及子文件夹
         """
@@ -74,7 +77,7 @@ class Auto:
             for i in range(len(Main_Json)):
                 bv = Main_Json[i]["bv"]
                 try:
-                    Main_Json[i]["tags"] = open(self.path+f"/timeline/{bv}.txt","r",encoding="utf-8").read().split("\n")
+                    Main_Json[i]["tags"] = open(self.path+f"/timeline/{bv}.txt","r",encoding="utf-8").read().replace("'","”").replace('"','”').split("\n")
                 except FileNotFoundError as e :
                     logging.debug(f"{bv} 的轴可能没有 (需要补全) \n")
             open(self.path+"./main.json",'w',encoding="utf-8").write(str(Main_Json).replace("'",'"'))
@@ -200,3 +203,10 @@ class Auto:
 
 if __name__ == "__main__":
     Auto()
+    try:
+        port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["Process"]["xmlRpcPort"])
+    except Exception:
+        port = 5009
+    server = SimpleXMLRPCServer(("localhost", port))
+    server.register_instance(Auto)
+    server.serve_forever()

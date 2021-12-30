@@ -1,3 +1,4 @@
+# _*_ coding:utf-8 _*_
 """
 是否在直播呢
 https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp
@@ -6,10 +7,25 @@ import sys
 import requests
 import time
 from threading import Thread
-import Bot.blibot.global_var as gl
 import logging
-Status = gl.get('Status')
 
+from xmlrpc.server import SimpleXMLRPCServer
+from xmlrpc.server import SimpleXMLRPCRequestHandler
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(level = logging.INFO)
+handler = logging.FileHandler("./logs/LiveroomMonitor.txt")
+handler.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+logger.addHandler(handler)
+logger.addHandler(console)
+
+class RequestHandler(SimpleXMLRPCRequestHandler):
+    rpc_paths = ('/RPC2','./',)
 
 class Liveroom_Bot:
     
@@ -18,7 +34,7 @@ class Liveroom_Bot:
         'References':'https://www.bilibili.com/',
     }
 
-    def __init__(self,uid,interval:int=10) -> None:
+    def __init__(self,uid,interval:int=60) -> None:
         self.uid = []
         self.interval = interval
         if type(uid) == str:
@@ -48,28 +64,38 @@ class Liveroom_Bot:
             if r.json()["data"]["live_room"]["liveStatus"] == 1:
                 logging.info("\r{name} {uid} is on streaming with title {title}".format(uid=uid,title=r.json()['data']["live_room"]["title"],name=r.json()["data"]["name"]),end="")
                 result["onLive"] = True
-                Status["OnLive"].append(uid)
+                #Status["OnLive"].append(uid)
                 if len(result["start_time"]) == 0:
                     result["start_time"] = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
                     result["title"] = r.json()['data']["live_room"]["title"]
             else:
                 #logging.info("{name} {uid} is not on streaming".format(uid=uid,name=r.json()["data"]["name"]))
                 try:
-                    Status["OnLive"].remove(uid)
+                    pass
+                    #Status["OnLive"].remove(uid)
                 except:
                     pass
                 if result["onLive"]:
-                    Status["WaitForRecord"].append(uid)
+                    #Status["WaitForRecord"].append(uid)
                     result["end_time"] = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
                     logging.info("LiveStream end with result ",result)
                     result["onLive"] = False
                     logging.info("\n")
                     #直播结束
             time.sleep(self.interval)
-            gl.set('Status',Status)
-            gl.set(f'{uid}_LiveDetail',result)
             
 
 if __name__ == "__main__":
+    """
     uid = ["672342685","672328094","351609538","672353429","672346917"]
     a = Liveroom_Bot(uid)
+    """
+    try:
+        import json
+        port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlRpcPort"])
+    except Exception:
+        port = 5005 #默认端口5005
+
+    server = SimpleXMLRPCServer(("localhost", port))
+    server.register_instance(Liveroom_Bot)
+    server.serve_forever()

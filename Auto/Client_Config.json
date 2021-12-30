@@ -1,29 +1,22 @@
 {
     "bot":{
-        "blibot":{
             "liveroom_monitor":{
                 "uid":["672346917","672353429","351609538","672328094","672342685","703007996"],
-                "interval":20
+                "xmlRpc":"localhost:5005"
             },
 
             "dynamtic":{
                 "uid":["672346917","672353429","351609538","672328094","672342685","703007996"],
-                "interval":60
+                "xmlRpc":"localhost:5006"
             },
 
             "Record_monitor":{
                 "uid":"393396916",
-                "interval":60
-            },
-
-            "Video_comment":{
-                "uid":[],
-                "interval":60
+                "xmlRpc":"localhost:5007"
             }
 
-        }
     },
+    "XmlRpcClientPort":5002,
     "subtitle_server":"sub.abc.com",
-    "main_interval":60,
     "subtitle_server_token":""
 }

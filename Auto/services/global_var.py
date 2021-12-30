@@ -1,3 +1,7 @@
+"""
+全局变量
+"""
+
 def __init__():
     global __global_dict
     __global_dict = {}

@@ -1,0 +1,25 @@
+{
+	"liveroom_monitor": {
+		"xmlRpcPort": 5005
+	},
+
+	"dynamtic": {
+		"xmlRpcPort": 5006
+	},
+
+	"Record_monitor": {
+		"xmlClientHost": "http://127.0.0.1:5002"
+	},
+
+	"BiliVideoDownloader":{
+		"xmlRpcPort": 5008
+	},
+
+	"Process":{
+		"xmlRpcPort": 5009
+	},
+
+	"SpiderTimeLine":{
+		"xmlRpcPort": 5010
+	}
+}

@@ -12,7 +12,7 @@ import json
 import time
 import argparse
 from threading import Thread
-class DynamticBot():
+class DynamticBot:
     headers = {
         "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
     }
@@ -109,8 +109,6 @@ if __name__ == "__main__":
         uids = args.uid.split(",")
     except IndexError:
         uids = [args.uid]
-    #uids = ["672328094","672342685","351609538","672353429","672346917","703007996"]
-    #672328094,672342685,351609538,672353429,672346917,703007996
     for uid in uids:
         content = {
             "uid":uid,
