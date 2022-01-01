@@ -203,6 +203,7 @@ class Auto:
 
 if __name__ == "__main__":
     Auto()
+    print("Start Rpc services")
     try:
         port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["Process"]["xmlRpcPort"])
     except Exception:

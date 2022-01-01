@@ -8,9 +8,11 @@ https://api.bilibili.com/x/v2/reply/main?jsonp=jsonp&next=0&type=1&oid={av}&mode
 import requests
 import time
 import re
-import sys
+import logging
+from threading import Thread
 from xmlrpc.server import SimpleXMLRPCServer
-def Spider_TimeLine(bv:str,uid:list) -> None:
+from xmlrpc.client import ServerProxy
+def Spider_TimeLine(bv:str,uid:list=["53082699"]) -> None:
     def Monitor(interval:int=60)->None:
         """
         每隔interval就可以更新一次
@@ -18,7 +20,8 @@ def Spider_TimeLine(bv:str,uid:list) -> None:
         while True:
             result = GetComments()
             if CalculateAllTime(result):
-                print(f"\r更新成功\n{result['contents']}",end="")
+                print(f"\r更新成功\n",end="")
+                ServerProxy(Client_Server).receiveSignal("TimeLine",{"error":0,"data":{"BV":bv,"Content":result['contents']}})
                 break
             else:
                 time.sleep(interval)
@@ -47,13 +50,14 @@ def Spider_TimeLine(bv:str,uid:list) -> None:
                     if i["member"]["mid"] in uid:
                         result.append(i["content"]["message"])
                 step += 1
+            return result
             return '\n'.join(result)
 
 
         returning = {
             "code":0,
             "uid":uid,
-            "contents":[]
+            "contents":[""]
         }
         if len(uid) == 0:
             return returning
@@ -63,8 +67,10 @@ def Spider_TimeLine(bv:str,uid:list) -> None:
             try:
                 if str(r.json()["data"]["top"]["upper"]["mid"]) in uid:
                     returning["code"] = 1
-                    returning["contents"] = r.json()["data"]["top"]["upper"]["content"]["message"]
+                    print("have topest")
+                    returning["contents"][0] = [r.json()["data"]["top"]["upper"]["content"]["message"]]
                     returning["contents"] += Comments_In_Floor(r.json()["data"]["top"]["upper"]["rpid"])
+                    print(returning)
                     return returning
             except TypeError:
                 print("\r没有置顶",end="")
@@ -78,8 +84,8 @@ def Spider_TimeLine(bv:str,uid:list) -> None:
                 for i in r.json()["data"]["replies"]:
                     if str(i["member"]["mid"]) in uid:
                         returning["code"] = 1
-                        returning["contents"]= i["content"]["message"]
-                        returning["contents"]+=Comments_In_Floor(i["rpid"])
+                        returning["contents"][0] = [i["content"]["message"]]
+                        returning["contents"] += Comments_In_Floor(i["rpid"])
                 start += 1
                 time.sleep(1)
         return returning
@@ -90,7 +96,7 @@ def Spider_TimeLine(bv:str,uid:list) -> None:
         if len(result["contents"]) == 0:
             #说明一个轴都没有,继续loop
             return False
-        results = result["contents"].replace(" ","")
+        results = str(result["contents"]).replace(" ","")  # 把list格式替换回str格式
         results = results.replace("：",":")
         def to_seconds(a):
             if a.count(":") == 3:
@@ -149,14 +155,32 @@ def Spider_TimeLine(bv:str,uid:list) -> None:
             duration += i["duration"]
     return Monitor()
 
+def ping():
+    return "pong"
+
+def rpcCall(*args,**kwargs):
+    Called = False
+    if Called:
+        return {"error":1,"msg":"Already Called"}
+    Thread(target=Spider_TimeLine,args=args,kwargs=kwargs).start()
+    Called = True
+    return {"error":0,"msg":"start success"}
+
 if __name__ == "__main__":
     #a = Spider_TimeLine("BV1Mr4y1S7B3",["53082699"])
     try:
         import json
-        port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["SpiderTimeLine"]["xmlRpcPort"])
+        port = int(json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["SpiderTimeLine"]["xmlRpcPort"])
+        host = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["SpiderTimeLine"]["xmlRpcHost"]
+        Client_Server = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["SpiderTimeLine"]["xmlClientHost"]
     except Exception:
+        host = "localhost"
         port = 5010
+        Client_Server = "http://localhost:5002"
 
-    server = SimpleXMLRPCServer(("localhost", port))
-    server.register_function(Spider_TimeLine)
+    server = SimpleXMLRPCServer(("0.0.0.0", port))
+    server.register_function(rpcCall,"Spider_TimeLine")
+    server.register_function(ping,"ping")
+    print("SpiderTimeLine服务已启动")
     server.serve_forever()
+    

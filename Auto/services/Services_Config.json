@@ -1,25 +1,35 @@
 {
 	"liveroom_monitor": {
-		"xmlRpcPort": 5005
+		"xmlRpcPort": 5005,
+		"xmlRpcHost":"localhost",
+		"xmlClientHost": "http://localhost:5002"
 	},
 
 	"dynamtic": {
-		"xmlRpcPort": 5006
+		"xmlRpcHost":"localhost",
+		"xmlRpcPort": 5006	
 	},
 
 	"Record_monitor": {
-		"xmlClientHost": "http://127.0.0.1:5002"
+		"xmlRpcHost":"localhost",
+		"xmlRpcPort":5007,
+		"xmlClientHost": "http://localhost:5002"
 	},
 
 	"BiliVideoDownloader":{
-		"xmlRpcPort": 5008
+		"xmlRpcHost":"localhost",
+		"xmlRpcPort": 5008,
+		"xmlClientHost": "http://localhost:5002",
+		"Download_Path":"./"
 	},
 
 	"Process":{
+		"xmlRpcHost":"localhost",
 		"xmlRpcPort": 5009
 	},
 
 	"SpiderTimeLine":{
+		"xmlRpcHost":"localhost",
 		"xmlRpcPort": 5010
 	}
 }

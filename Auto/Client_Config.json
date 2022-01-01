@@ -16,7 +16,8 @@
             }
 
     },
-    "XmlRpcClientPort":5002,
+    "xmlRpcHost":"localhost",
+    "xmlRpcPort":5002,
     "subtitle_server":"sub.abc.com",
     "subtitle_server_token":""
 }

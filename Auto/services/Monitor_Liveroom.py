@@ -1,17 +1,17 @@
 # _*_ coding:utf-8 _*_
 """
 是否在直播呢
+Asdb Services
+Version V2.0.0 - alpha
 https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp
 """
-import sys
+import json
 import requests
 import time
 from threading import Thread
 import logging
-
 from xmlrpc.server import SimpleXMLRPCServer
-from xmlrpc.server import SimpleXMLRPCRequestHandler
-import logging
+from xmlrpc.client import ServerProxy
 
 logger = logging.getLogger(__name__)
 logger.setLevel(level = logging.INFO)
@@ -24,78 +24,67 @@ console.setLevel(logging.INFO)
 logger.addHandler(handler)
 logger.addHandler(console)
 
-class RequestHandler(SimpleXMLRPCRequestHandler):
-    rpc_paths = ('/RPC2','./',)
+try:
+    port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlRpcPort"])
+    host = json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlRpcHost"]
+    Client_Server = json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlClientHost"]
+except:
+    port = 5005
+    Client_Server = "http://localhost:5002"
 
-class Liveroom_Bot:
-    
-    headers = {
-        'User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
-        'References':'https://www.bilibili.com/',
-    }
+headers = {
+    'User-Agent':"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
+    'References':'https://www.bilibili.com/',
+}
 
-    def __init__(self,uid,interval:int=60) -> None:
-        self.uid = []
-        self.interval = interval
-        if type(uid) == str:
-            self.uid.append(uid)
-        elif type(uid) == list:
-            self.uid = uid
-        elif type(uid) == int:
-            self.uid.append(str(uid))
-        else:
-            sys.exit("uid type error")
-        
-        for i in uid:
-            t = Thread(target=self.get_live_status,args=(i,))
-            t.start()
-
-    def get_live_status(self,uid:str):
-        result = {
-            "onLive":False,
-            "start_time":"",
-            "end_time":"",
-            "title":"",
-        }
+def Liveroom_Bot(uid:list=["672342685","672328094","351609538","672353429","672346917"],interval:int=60,mode:int=1) -> None:
+    """
+        mode:
+            0: 在开播和下播时才会发送消息
+            1: 每隔interval send message
+    """
+    def get_live_status(uid:str):
+        On_Live = False
+        Send = bool(mode)
         while True:
             url = "https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp".format(uid=uid)
-            r = requests.get(url,headers=self.headers)
-
+            r = requests.get(url,headers=headers)
             if r.json()["data"]["live_room"]["liveStatus"] == 1:
-                logging.info("\r{name} {uid} is on streaming with title {title}".format(uid=uid,title=r.json()['data']["live_room"]["title"],name=r.json()["data"]["name"]),end="")
-                result["onLive"] = True
-                #Status["OnLive"].append(uid)
-                if len(result["start_time"]) == 0:
-                    result["start_time"] = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
-                    result["title"] = r.json()['data']["live_room"]["title"]
-            else:
-                #logging.info("{name} {uid} is not on streaming".format(uid=uid,name=r.json()["data"]["name"]))
-                try:
-                    pass
-                    #Status["OnLive"].remove(uid)
-                except:
-                    pass
-                if result["onLive"]:
-                    #Status["WaitForRecord"].append(uid)
-                    result["end_time"] = time.strftime("%Y-%m-%d %H:%M:%S",time.localtime())
-                    logging.info("LiveStream end with result ",result)
-                    result["onLive"] = False
-                    logging.info("\n")
-                    #直播结束
-            time.sleep(self.interval)
-            
+                #开播
+                Send = On_Live == False and bool(mode)==False if bool(mode) == False else True #开播发送信息 (我也不知道在写什么,总之能运行就是了)
+                On_Live = True   
+            elif r.json()["data"]["live_room"]["liveStatus"] == 0 and On_Live:
+                #直播结束
+                Send = True #下播发送信息
+                On_Live = False
+            if Send:
+                ServerProxy(Client_Server).receiveSignal("Liveroom_Monitor",{"error":0,"data":{"uid":uid,"info":r.json()["data"]["live_room"],"On_Live":On_Live}}) #直接扔所有信息过去,没必要在这里整合,使其耦合度增加
+            Send = bool(mode)
+            time.sleep(interval)
+
+    for i in uid:
+        t = Thread(target=get_live_status,args=(i,))
+        t.start()
+
+def rpcCall(*args,**kwargs):
+    Called = False
+    if Called:
+        return {"error":1,"msg":"Already Called"}
+    Thread(target=Liveroom_Bot,args=args,kwargs=kwargs).start()
+    Called = True
+    return {"error":0,"msg":"start success"}
+
+
+def ping():
+    return "pong"
 
 if __name__ == "__main__":
     """
     uid = ["672342685","672328094","351609538","672353429","672346917"]
     a = Liveroom_Bot(uid)
     """
-    try:
-        import json
-        port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlRpcPort"])
-    except Exception:
-        port = 5005 #默认端口5005
 
-    server = SimpleXMLRPCServer(("localhost", port))
-    server.register_instance(Liveroom_Bot)
+    server = SimpleXMLRPCServer((host, port))  # 如果进行分布式访问,请务必将localhost改为Ip地址(或localhost)
+    server.register_function(rpcCall,"Liveroom_Bot")
+    server.register_function(ping)
     server.serve_forever()

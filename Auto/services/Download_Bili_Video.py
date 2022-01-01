@@ -15,9 +15,9 @@ qn{
 import requests
 from contextlib import closing
 from xmlrpc.server import SimpleXMLRPCServer
-from xmlrpc.server import SimpleXMLRPCRequestHandler
+from xmlrpc.client import ServerProxy
 import logging
-
+from threading import Thread
 logger = logging.getLogger(__name__)
 logger.setLevel(level = logging.INFO)
 handler = logging.FileHandler("./logs/BiliViodeoDownloadr.txt")
@@ -30,10 +30,7 @@ logger.addHandler(handler)
 logger.addHandler(console)
 
 
-class RequestHandler(SimpleXMLRPCRequestHandler):
-    rpc_paths = ('/RPC2','./',)
-
-def Download_Bili_Video(bv:str,p:list=[],qn:str="16",path:str="") -> bool:
+def Download_Bili_Video(bv:str,p:list=[],qn:str="16") -> bool:
     headers = {
     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
     "Referer":"https://www.bilibili.com/",
@@ -74,12 +71,11 @@ def Download_Bili_Video(bv:str,p:list=[],qn:str="16",path:str="") -> bool:
             #下载单个视频的函数
             with closing(requests.session().get(url,headers=headers,stream=True)) as response:
                 chunk_size = 1024
-                with open(f"components/tmp/{path}{name}", "wb") as file:
+                with open(f"{path}{name}", "wb") as file:
                     for data in response.iter_content(chunk_size=chunk_size):
                         file.write(data)
                 logging.info(f"{name} 下载完成")
             return True
-        result = False
         formats = "mp4" if qn == "16" else "flv"
         p = 1
         for i in range(len(infos["p"])):
@@ -90,19 +86,32 @@ def Download_Bili_Video(bv:str,p:list=[],qn:str="16",path:str="") -> bool:
             p+=1
             Video_Name = f"{name}.{formats}"
             logging.info(Video_Name)
-            result = down(Video_Durl,Video_Name)
-                
-        return result
+            down(Video_Durl,Video_Name)
+        ServerProxy(Client_Server).receiveSignal("Download_Bili_Video",{"error":0,"data":{"BV":name}})
+        raise SystemExit
 
     return Video_Download(Get_Info(p))
 
+def rpcCall(*args,**kwargs):
+    Called = False
+    if Called:
+        return {"error":1,"msg":"Already Called"}
+    Thread(target=Download_Bili_Video,args=args,kwargs=kwargs).start()
+    Called = True
+    return {"error":0,"msg":"start success"}
 
 try:
     import json
-    port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["BiliVideoDownloader"]["xmlRpcPort"])
-except Exception:
+    port = int(json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["BiliVideoDownloader"]["xmlRpcPort"])
+    host = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["BiliVideoDownloader"]["xmlRpcHost"]
+    Client_Server = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["BiliVideoDownloader"]["xmlClientHost"]
+    path = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["BiliVideoDownloader"]["Download_Path"]
+except:
+    host = "localhost"
     port = 5008 #默认端口5008
+    Client_Server = "http://localhost:5002"
+    path = "./"
 
-BiliVideoDownloadServier = SimpleXMLRPCServer(("localhost", port))
-BiliVideoDownloadServier.register_function(Download_Bili_Video, "Download_Bili_Video")
+BiliVideoDownloadServier = SimpleXMLRPCServer((host, port))
+BiliVideoDownloadServier.register_function(rpcCall, "Download_Bili_Video")
 BiliVideoDownloadServier.serve_forever()
