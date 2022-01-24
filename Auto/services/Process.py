@@ -49,7 +49,7 @@ class Auto:
         return result
 
 
-    def FindAllDirs(self,path:str="D:\projects/as\A-Soul-Data\db/2021",result:dict={"year":[],"months":[]})->dict:
+    def FindAllDirs(self,path:str="D:\projects/as\A-Soul-Data\db/2022",result:dict={"year":[],"months":[]})->dict:
         """
             遍历文件夹及子文件夹
         """

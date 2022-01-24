@@ -22,8 +22,9 @@ def Spider_TimeLine(bv:str,uid:list=["53082699"]) -> None:
         while True:
             result = GetComments()
             if CalculateAllTime(result):
-                print(f"\r更新成功\n",end="")
+                print(f"\r{bv}更新成功\n",end="")
                 ServerProxy(Client_Server).receiveSignal("TimeLine",{"error":0,"data":{"BV":bv,"Content":result['contents']}})
+                raise SystemExit
                 break
             else:
                 time.sleep(interval)
@@ -113,10 +114,10 @@ def Spider_TimeLine(bv:str,uid:list=["53082699"]) -> None:
             comments_time += re.findall(r'[0-9]*:[0-9]*',i)
             comments_time = [fn for fn in comments_time if fn != ":"] #去除 : 单独的行数
             ### 开始计算时间
-
-            Comment_All_time += to_seconds(comments_time[-1]) - to_seconds(comments_time[0]) 
+            Comment_All_time += to_seconds(comments_time[-1]) - to_seconds(comments_time[0])
         
-        print(Comment_All_time,duration)
+        result["contents"].reverse() #处理之后的时间顺序需要反转
+
         if Comment_All_time > duration*0.8:
             #说明轴已经达到了所有分P的80%,即代表轴已经完成
             return True

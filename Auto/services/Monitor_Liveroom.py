@@ -25,9 +25,9 @@ logger.addHandler(handler)
 logger.addHandler(console)
 
 try:
-    port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlRpcPort"])
-    host = json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlRpcHost"]
-    Client_Server = json.loads(open("./Services_Config.json","r","utf-8").read())["liveroom_monitor"]["xmlClientHost"]
+    port = int(json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["liveroom_monitor"]["xmlRpcPort"])
+    host = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["liveroom_monitor"]["xmlRpcHost"]
+    Client_Server = json.loads(open("./Services_Config.json","r",encoding="utf-8").read())["liveroom_monitor"]["xmlClientHost"]
 except:
     port = 5005
     Client_Server = "http://localhost:5002"
@@ -49,6 +49,7 @@ def Liveroom_Bot(uid:list=["672342685","672328094","351609538","672353429","6723
         while True:
             url = "https://api.bilibili.com/x/space/acc/info?mid={uid}&jsonp=jsonp".format(uid=uid)
             r = requests.get(url,headers=headers)
+            #未开播的还是会Push一下
             if r.json()["data"]["live_room"]["liveStatus"] == 1:
                 #开播
                 Send = On_Live == False and bool(mode)==False if bool(mode) == False else True #开播发送信息 (我也不知道在写什么,总之能运行就是了)
