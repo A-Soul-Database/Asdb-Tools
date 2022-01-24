@@ -1,0 +1,8 @@
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: ./go/train/images
+val: ./go/val/images
+# number of classes
+nc: 72
+
+# class names
+names: ['Ava','Bella','Carol','Diana','Eileen','Ava-Official','Bella-Official','Carol-Official','Diana-Official','Eileen-Official','Ava-Group','Bella-Group','Carol-Group','Diana-Group','Eileen-Group','Ava-Swim','Bella-Swim','Carol-Swim','Diana-Swim','Eileen-Swim','Ava-Birthday','Bella-Birthday','Carol-Birthday','Diana-Birthday','Eileen-Birthday','Ava-Year','Bella-Year','Carol-Year','Diana-Year','Eileen-Year','Ava-Christmas','Bella-Christmas','Carol-Christmas','Diana-Christmas','Eileen-Christmas','Ava-Sleep-1','Ava-Sleep-2','Bella-Sleep','Carol-Sleep','Diana-Sleep','Eileen-Sleep','Ava-LegendWorld','Bella-LegendWorld','Carol-LegendWorld','Diana-LegendWorld','Eileen-LegendWorld','Bella-Sport','Bella-Jk','Diana-Creamy','Diana-Swim-Without-Outer','Eileen-Group-Shoes','Eileen-Sleep-Breast','Bella-Group-Shoes','Diana-Group-Skirt','Diana-Year-Shoes','Projector','Projector-LASER','Ava-Birthday-Breast','Diana-Creamy','Glasses','Fox-Tail','Fox-Ear','Rabbit-Ear','Rabbit-Gloves','Bear-Ear','Bear-Gloves','Cat-Ear','Cat-Gloves','Wolf-Ear','Wolf-Gloves','Wolf-Tail','Fox-Gloves']
