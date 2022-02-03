@@ -20,7 +20,7 @@ av = r["data"]["arc"]["oid"]
 content = json.loads(r["data"]["content"])
 rolls = ""
 time = 0
-forbidden_Words = ["p1","p2","p3","p4"]
+forbidden_Words = ["p1","p2","p3","p4","p5","p6"]
 for item in content:
     if type(item["insert"]) == str:
         # Str 说明是内容

@@ -10,15 +10,14 @@
         Services 下的所有服务都可进行分布式部署,分布式部署时请注意端口开放及Ip绑定
         请注意版本对应
 
-
 """
 import logging
-import sys
-import json
-from xmlrpc import server
+import Components as Cp
+import time
 import requests
-from xmlrpc.client import ServerProxy
-from xmlrpc.server import SimpleXMLRPCServer
+from threading import Thread
+import random
+import os
 
 logger = logging.getLogger(__name__)
 logger.setLevel(level = logging.INFO)
@@ -31,39 +30,47 @@ console.setLevel(logging.INFO)
 logger.addHandler(handler)
 logger.addHandler(console)
 
-try:
-    Config = json.loads(open("./Client_Config.json","r",encoding="utf-8").read())
-except:
-    logger.error("请检查配置文件是否存在或配置文件是否正确")
-    sys.exit(0)
-RpcServer = SimpleXMLRPCServer((Config["xmlRpcHost"],Config["xmlRpcPort"]))
+Lists = {}
+Got_Bv = []
 
+#### __init Got_Bv
+def __init__Got_Bv():
+    global Got_Bv
+    Source = "https://cdn.jsdelivr.net/gh/A-Soul-Database/A-Soul-Data@latest/"
+    Main_Json = requests.get(f"{Source}/db/main.json").json()["LiveClip"]
+    for i in Main_Json:
+        Got_Bv += requests.get(f"{Source}/db/{i}/indexer.json").json()
 
-def receiveSignal(service:str,info:dict):
-    """
-    接收xmlrpc消息
-    service: ["Liveroom_Monitor","Record_Monitor","Dynamtic_Monitor"]
-    info:{
-        error:0/1,
-        data:{}
-    }
-    """
-    logging.error(f"erro : {service}:{info}") if info["error"] else logging.info(f"{service}:{info}")
+class Single_Operation:
+    def __init__(self,Latest_bv:str):
+        # Get Latest Bv id
+        self.bv = Latest_bv
+        self.Change_Status(f"Start Processing {Latest_bv}")
+        #Cp.Apply_Srt(Latest_bv)
+        #self.Change_Status("Applied_Srt")
+        filename = Cp.Download_Bili_Video(Latest_bv,"./tmp_Video")["data"]["files"]
+        self.Change_Status("Got_Download_Video")
+        Objects = Cp.Apply_detection("./tmp_Video",filename)
+        self.Change_Status(f"Finished Object Detect. With result {Objects}")
+        #Cp.JsonGenerator(Latest_bv,)
+        #TimeLine = Cp.Timeline_Monitor(Latest_bv)["data"]["rolls"]
+        #self.Change_Status("Got Timeline")
+        #Cp.Get_Srt_Result(bv)
+        #Process.Auto()
 
-
-def _init_necessary_Services():
-
-    #启动直播爬虫和录播爬虫
-    """
-    result = ServerProxy(Config["bot"]["Record_monitor"]["xmlRpc"]).RecordMonitor()
-    logging.error(f"error : {result}") if result["error"] else logging.info(f"{result}")
-    """
-    print(Config)
-    result = ServerProxy(Config["bot"]["liveroom_monitor"]["xmlRpc"]).Liveroom_Bot()
-    logging.error(f"error : {result}") if result["error"] else logging.info(f"{result}")
-
+    def Change_Status(self,status:str):
+        Lists[self.bv]["Stage"] = status
+        print(f"{self.bv} : {Lists[self.bv]}")
 
 if __name__ == "__main__":
-    _init_necessary_Services()
-    RpcServer.register_function(receiveSignal, "receiveSignal")
-    RpcServer.serve_forever()
+    __init__Got_Bv()
+    ### For Test Only
+    Latest_bv = "BV1f34y1i7tT"
+    Lists[Latest_bv] = {"Status":"Running","Start_Time":int(time.time()),"Stage":"Initializing"}
+    Thread(target=Single_Operation,args=(Latest_bv,)).start()
+    while 0:
+        Latest_bv = Cp.Record_Monitor()["data"]["Bv"]
+        if Latest_bv not in Got_Bv and Latest_bv not in Lists.keys():
+            Thread(target=Single_Operation,args=(Latest_bv,)).start()
+            Lists[Latest_bv] = {"Status":"Running","Start_Time":time.time(),"Stage":"Initializing"}
+            time.sleep(random.randint(3,5))

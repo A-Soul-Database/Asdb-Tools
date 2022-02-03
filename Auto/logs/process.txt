@@ -1,0 +1,4 @@
+INFO:git.cmd:Ignored error after process had died: OSError(9, '句柄无效。', None, 6, None)
+INFO:git.cmd:Ignored error after process had died: OSError(9, '句柄无效。', None, 6, None)
+INFO:git.cmd:Ignored error after process had died: OSError(9, '句柄无效。', None, 6, None)
+INFO:git.cmd:Ignored error after process had died: OSError(9, '句柄无效。', None, 6, None)
