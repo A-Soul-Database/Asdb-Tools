@@ -11,24 +11,13 @@
         请注意版本对应
 
 """
-import logging
-import Components as Cp
+import services
 import time
 import requests
 from threading import Thread
 import random
 import os
 
-logger = logging.getLogger(__name__)
-logger.setLevel(level = logging.INFO)
-handler = logging.FileHandler("./Main_log.txt")
-handler.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-console = logging.StreamHandler()
-console.setLevel(logging.INFO)
-logger.addHandler(handler)
-logger.addHandler(console)
 
 Lists = {}
 Got_Bv = []
@@ -48,12 +37,11 @@ class Single_Operation:
         self.Change_Status(f"Start Processing {Latest_bv}")
         #Cp.Apply_Srt(Latest_bv)
         #self.Change_Status("Applied_Srt")
-        #filename = Cp.Download_Bili_Video(Latest_bv,"./tmp_Video")["data"]["files"]
-        filename = ["BV1f34y1i7tT.mp4"]
+        filename = services.Components.Download_Bili_Video(Latest_bv,"./tmp_Video")["data"]["files"]
         self.Change_Status("Got_Download_Video")
-        Objects = Cp.Apply_detection("./tmp_Video",filename)
+        Objects = services.Components.Apply_detection("./tmp_Video",filename)
         self.Change_Status(f"Finished Object Detect. With result {Objects}")
-        Cp.JsonGenerator(Latest_bv,Objects)
+        services.Components.JsonGenerator(Latest_bv,Objects)
         #TimeLine = Cp.Timeline_Monitor(Latest_bv)["data"]["rolls"]
         #self.Change_Status("Got Timeline")
         #Cp.Get_Srt_Result(bv)
@@ -70,7 +58,7 @@ if __name__ == "__main__":
     Lists[Latest_bv] = {"Status":"Running","Start_Time":int(time.time()),"Stage":"Initializing"}
     Thread(target=Single_Operation,args=(Latest_bv,)).start()
     while 0:
-        Latest_bv = Cp.Record_Monitor()["data"]["Bv"]
+        Latest_bv = services.Components.Record_Monitor()["data"]["Bv"]
         if Latest_bv not in Got_Bv and Latest_bv not in Lists.keys():
             Thread(target=Single_Operation,args=(Latest_bv,)).start()
             Lists[Latest_bv] = {"Status":"Running","Start_Time":time.time(),"Stage":"Initializing"}

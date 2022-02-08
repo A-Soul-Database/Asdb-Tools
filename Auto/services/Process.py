@@ -11,7 +11,7 @@ import logging
 from xmlrpc.server import SimpleXMLRPCServer
 
 
-logging.basicConfig(filename='./logs/process.txt', level=logging.INFO)
+#logging.basicConfig(filename='./logs/process.txt', level=logging.INFO)
 
 
 class Auto:

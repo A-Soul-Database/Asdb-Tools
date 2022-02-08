@@ -298,23 +298,12 @@ def parse_opt():
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
     print_args(FILE.stem, opt)
-    not os.path.exists("./V1.2.pt") and Get_Weights()
     return opt
 
 
 def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
     run(**vars(opt))
-
-def Get_Weights():
-    import requests
-    from contextlib import closing
-    with closing(requests.get("https://github.com/A-Soul-Database/yolov5/releases/download/Asdb_V1.2/V1.2.pt", stream=True)) as r:
-        with open("./V1.2.pt", "wb") as f:
-            for chunk in r.iter_content(chunk_size=10240):
-                if chunk:
-                    f.write(chunk)
-                    f.flush()
 
 if __name__ == "__main__":
     opt = parse_opt()
