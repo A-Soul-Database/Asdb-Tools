@@ -48,11 +48,12 @@ class Single_Operation:
         self.Change_Status(f"Start Processing {Latest_bv}")
         #Cp.Apply_Srt(Latest_bv)
         #self.Change_Status("Applied_Srt")
-        filename = Cp.Download_Bili_Video(Latest_bv,"./tmp_Video")["data"]["files"]
+        #filename = Cp.Download_Bili_Video(Latest_bv,"./tmp_Video")["data"]["files"]
+        filename = ["BV1f34y1i7tT.mp4"]
         self.Change_Status("Got_Download_Video")
         Objects = Cp.Apply_detection("./tmp_Video",filename)
         self.Change_Status(f"Finished Object Detect. With result {Objects}")
-        #Cp.JsonGenerator(Latest_bv,)
+        Cp.JsonGenerator(Latest_bv,Objects)
         #TimeLine = Cp.Timeline_Monitor(Latest_bv)["data"]["rolls"]
         #self.Change_Status("Got Timeline")
         #Cp.Get_Srt_Result(bv)
@@ -63,7 +64,7 @@ class Single_Operation:
         print(f"{self.bv} : {Lists[self.bv]}")
 
 if __name__ == "__main__":
-    __init__Got_Bv()
+    #__init__Got_Bv()
     ### For Test Only
     Latest_bv = "BV1f34y1i7tT"
     Lists[Latest_bv] = {"Status":"Running","Start_Time":int(time.time()),"Stage":"Initializing"}
