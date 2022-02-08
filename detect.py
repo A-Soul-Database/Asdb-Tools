@@ -10,7 +10,6 @@ import argparse
 import os
 import sys
 from pathlib import Path
-import math
 import skimage.exposure
 import cv2
 import torch
@@ -35,7 +34,7 @@ from utils.torch_utils import select_device, time_sync
 @torch.no_grad()
 def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         source=ROOT / 'data/images',  # file/dir/URL/glob, 0 for webcam
-        data=ROOT / 'data/coco128.yaml',  # dataset.yaml path
+        data=ROOT / 'data/as.yaml',  # dataset.yaml path
         imgsz=(640, 640),  # inference size (height, width)
         conf_thres=0.25,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
@@ -97,7 +96,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
     for path, im, im0s, vid_cap, s in dataset:
         if running_type == "asdb":
             times+=1
-            if times % 10 != 0:
+            if times % 30 != 0:
                 continue
         t1 = time_sync()
         im = torch.from_numpy(im).to(device)
@@ -151,15 +150,14 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                 Ava Mode : Consitaant Detect and Save Video
                 """
                 for *xyxy, conf, cls in reversed(det):
-                    if running_type == "Ava" and int(cls) == 0:
+                    if running_type == "Ava":
                         if int(cls) == 0:
                             #AvavaAva
                             xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
                             Ava_Im = Ava_Big_head(xywh,im0)
                         else:
                             Ava_Im = im0
-
-                    if save_img or save_crop or view_img:  # Add bbox to image
+                    elif save_img or save_crop or view_img:  # Add bbox to image
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
                         annotator.box_label(xyxy, label, color=colors(c, True))
@@ -172,7 +170,10 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
             # Save results (image with detections)
             if save_img:
                 if dataset.mode == 'image':
-                    cv2.imwrite(save_path, Ava_Im)
+                    if running_type == 'Ava':
+                        cv2.imwrite(save_path, Ava_Im)
+                    else:
+                        cv2.imwrite(save_path, im0)
                 else:  # 'video' or 'stream'
                     if vid_path[i] != save_path:  # new video
                         vid_path[i] = save_path
@@ -204,14 +205,15 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
 
 
 def Ava_Big_head(Position,img):
-
-    cx = int(Position[0] * img.shape[1])
-    cy = int(Position[1] * img.shape[0]) # Y坐标
-    radius = int(min(Position[2]* img.shape[1],Position[3]* img.shape[0])) # 半径
-
+    t = time.time()
+    smallimg = cv2.resize(img, (0, 0), fx=0.5, fy=0.5,interpolation=cv2.INTER_AREA)
+    cx = int(Position[0] * img.shape[1] //2)
+    cy = int(Position[1] * img.shape[0] //2) # Y坐标
+    radius = int(min(Position[2]* img.shape[1],Position[3]* img.shape[0]) // 2) # 半径
+    
     gain = 1.5
 
-    crop = img[cy-radius:cy+radius, cx-radius:cx+radius]
+    crop = smallimg[cy-radius:cy+radius, cx-radius:cx+radius]
 
     ht,wd = crop.shape[:2]
     xcent = wd/2
@@ -221,12 +223,12 @@ def Ava_Big_head(Position,img):
     map_x = np.zeros((ht,wd),np.float32)
     map_y = np.zeros((ht,wd),np.float32)
     mask = np.zeros((ht,wd),np.uint8)
-
+    
     for y in range(ht):
         Y = (y - ycent)/ycent
         for x in range(wd):
             X = (x - xcent)/xcent
-            R = math.hypot(X,Y)
+            R = np.math.hypot(X,Y)
             if R == 0:
                 map_x[y, x] = x
                 map_y[y, x] = y
@@ -236,17 +238,16 @@ def Ava_Big_head(Position,img):
                 map_y[y, x] = y
                 mask[y,x] = 0
             elif gain >= 0:
-                map_x[y, x] = xcent*X*math.pow((2/math.pi)*(math.asin(R)/R), gain) + xcent
-                map_y[y, x] = ycent*Y*math.pow((2/math.pi)*(math.asin(R)/R), gain) + ycent
+                map_x[y, x] = xcent*X*np.math.pow((2/np.math.pi)*(np.math.asin(R)/R), gain) + xcent
+                map_y[y, x] = ycent*Y*np.math.pow((2/np.math.pi)*(np.math.asin(R)/R), gain) + ycent
                 mask[y,x] = 255
             elif gain < 0:
                 gain2 = -gain
-                map_x[y, x] = xcent*X*math.pow((math.sin(math.pi*R/2)/R), gain2) + xcent
-                map_y[y, x] = ycent*Y*math.pow((math.sin(math.pi*R/2)/R), gain2) + ycent
+                map_x[y, x] = xcent*X*np.math.pow((np.math.sin(np.math.pi*R/2)/R), gain2) + xcent
+                map_y[y, x] = ycent*Y*np.math.pow((np.math.sin(np.math.pi*R/2)/R), gain2) + ycent
                 mask[y,x] = 255
     # remap using map_x and map_y
     bump = cv2.remap(crop, map_x, map_y, cv2.INTER_LINEAR, borderMode = cv2.BORDER_CONSTANT, borderValue=(0,0,0))
-
     # antialias edge of mask
     # (pad so blur does not extend to edges of image, then crop later)
     blur = 7
@@ -257,19 +258,19 @@ def Ava_Big_head(Position,img):
     mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
     mask = skimage.exposure.rescale_intensity(mask, in_range=(127.5,255), out_range=(0,1))
 
-    # merge bump with crop using grayscale (not binary) mask
-    bumped = (bump * mask + crop * (1-mask)).clip(0,255).astype(np.uint8)
-
+    # merge bump with crop using grayscale (not binary) mask    
+    bumped = (bump * mask+ crop * (1-mask)).clip(0,255).astype(np.uint8)
+    bumped = cv2.resize(bumped, (0, 0), fx=2, fy=2,interpolation=cv2.INTER_AREA)
     # insert bumped image into original
     result = img.copy()
-    result[cy-radius:cy+radius, cx-radius:cx+radius] = bumped
+    result[cy*2-radius*2:cy*2+radius*2, cx*2-radius*2:cx*2+radius*2] = bumped
     return result
 
 def parse_opt():
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str, default=ROOT / 'V1.2.pt', help='model path(s)')
     parser.add_argument('--source', type=str, default=ROOT / 'data/images', help='file/dir/URL/glob, 0 for webcam')
-    parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='(optional) dataset.yaml path')
+    parser.add_argument('--data', type=str, default=ROOT / 'data/as.yaml', help='(optional) dataset.yaml path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.80, help='confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='NMS IoU threshold')
@@ -297,6 +298,7 @@ def parse_opt():
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
     print_args(FILE.stem, opt)
+    not os.path.exists("./V1.2.pt") and Get_Weights()
     return opt
 
 
@@ -304,6 +306,15 @@ def main(opt):
     check_requirements(exclude=('tensorboard', 'thop'))
     run(**vars(opt))
 
+def Get_Weights():
+    import requests
+    from contextlib import closing
+    with closing(requests.get("https://github.com/A-Soul-Database/yolov5/releases/download/Asdb_V1.2/V1.2.pt", stream=True)) as r:
+        with open("./V1.2.pt", "wb") as f:
+            for chunk in r.iter_content(chunk_size=10240):
+                if chunk:
+                    f.write(chunk)
+                    f.flush()
 
 if __name__ == "__main__":
     opt = parse_opt()
