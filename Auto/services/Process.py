@@ -8,10 +8,8 @@ import json
 import re
 import requests
 import logging
-from xmlrpc.server import SimpleXMLRPCServer
 
-
-#logging.basicConfig(filename='./logs/process.txt', level=logging.INFO)
+logging.basicConfig(filename='./process.txt', level=logging.INFO)
 
 
 class Auto:
@@ -203,11 +201,3 @@ class Auto:
 
 if __name__ == "__main__":
     Auto()
-    print("Start Rpc services")
-    try:
-        port = int(json.loads(open("./Services_Config.json","r","utf-8").read())["Process"]["xmlRpcPort"])
-    except Exception:
-        port = 5009
-    server = SimpleXMLRPCServer(("localhost", port))
-    server.register_instance(Auto)
-    server.serve_forever()
