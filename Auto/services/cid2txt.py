@@ -36,7 +36,7 @@ def Cid2Txt(Url,staff):
             if len(cont) == 0 : continue
             if any(word in cont for word in stff_words): stff.append([cont.split("《")[1].split("》")[0],f"{p}-{time}",[staff]])
             if any(word in cont.lower() for word in forbidden_Words): continue
-            if cont in rolls: break
+            if cont in rolls.split("\n"): break
             rolls += f"{time} {cont}\n"
 
         elif type(item["insert"]) == dict:
