@@ -35,5 +35,3 @@ def Diff():
         if len([fn["bvid"] for fn in vlists if fn["bvid"] in asdb_bvs]) != 0 : # Asdb In First Page
             return Record_Monitor([fn for fn in vlists if fn not in asdb_bvs])
         else: time.sleep(random.randint(0,1))
-
-print(Diff())
