@@ -49,9 +49,10 @@ def Cid2Txt(Url,staff):
                 time = 0
 
     open(f"{bv}.txt","w",encoding="utf-8").write(rolls)
-    print(stff)
+    #print(stff)
+    return {"code":"0","data":{"bv":bv,"stff":stff}}
 
 if __name__ == "__main__":
     url = input()
     staff = input()
-    Cid2Txt(url,staff)
+    print(Cid2Txt(url,staff))

@@ -1,858 +1,0 @@
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/06
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/07
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/08
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/09
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/10
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/11
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/12
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/06
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/07
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/08
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/09
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/10
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/11
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/12
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-ERROR:root:[Errno 2] No such file or directory: 'D:\\projects/as\\A-Soul-Data\\db/2022/04/srt/-1.srt'
-ERROR:root:[Errno 2] No such file or directory: 'D:\\projects/as\\A-Soul-Data\\db/2022/04/srt/-2.srt'
-ERROR:root:字幕替换 处理出错
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/06
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/07
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/08
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/09
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/10
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/11
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2021/12
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/01
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/02
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/03
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/04
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:正在处理D:\projects/as\A-Soul-Data\db/2022/05
-INFO:root:打时间轴 已处理完成
-INFO:root:字幕替换 已处理完成
-INFO:root:月度搜索索引 已处理完成
-INFO:root:月度处理 已处理完成
-INFO:root:年度搜索索引 已处理完成
-INFO:root:年度主索引 已处理完成
-INFO:root:年度Bv索引 已处理完成
-INFO:root:封面补全 已处理完成

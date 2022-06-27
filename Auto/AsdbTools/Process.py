@@ -9,11 +9,14 @@ import re
 import requests
 import logging
 
-logging.basicConfig(filename='./process.txt', level=logging.INFO)
-
+#logging.basicConfig(filename='./process.txt', level=logging.INFO)
+class Process_Exception(Exception):
+    def __init__(self, *args: object,item) -> None:
+        super().__init__(*args)
+        print("{items} 处理出错".format(items=item))
 
 class Auto:
-    def __init__(self,Target_Path:str="./") -> None:
+    def __init__(self,Target_Path:str="D:\projects/as\A-Soul-Data\db/2022") -> None:
         self.Target_Path = os.path.abspath(Target_Path)
         self.process()
 
@@ -24,11 +27,11 @@ class Auto:
         if status:
             logging.info("{items} 已处理完成".format(items=item))
         else:
-            logging.error("{items} 处理出错".format(items=item))
+            raise Process_Exception(item)
         return status
 
     def process(self)->bool:
-        Dirs = self.FindAllDirs()
+        Dirs = self.FindAllDirs(self.Target_Path)
         result = False
         for month in Dirs["months"]:
             logging.info("\r正在处理{months}".format(months=month))
@@ -44,13 +47,15 @@ class Auto:
             result = self.result_Resolving(self.MainGenerator(),"年度主索引")
             result = self.result_Resolving(self.Indexer(),"年度Bv索引")
             self.FillCover()
-        return result
+        #return result
+        return {"code":"0"}
 
 
-    def FindAllDirs(self,path:str="D:\projects/as\A-Soul-Data\db/2022",result:dict={"year":[],"months":[]})->dict:
+    def FindAllDirs(self,path:str,result:dict={"year":[],"months":[]})->dict:
         """
             遍历文件夹及子文件夹
         """
+        #path = self.Target_Path
         monthIdentify = ["srt","schedule","timeline"]
         for i in os.listdir(path):
             if i == "Cover.json":
